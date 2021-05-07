@@ -1,0 +1,22 @@
+Endpoint: /api/login
+Method: POST
+request body
+{
+    "username":"john"
+    "password":"sample_password"
+}
+successful response:
+{
+    "AUTH-TOKEN":"7cb3fd2edd6fb2bade1bc40eaca2e2a3"
+}
+failed response:
+http code:400 (if invalid json format or username or password missing)
+{
+    "message":"username or password missing"
+}
+http code:401
+{
+    "message":"Authentication failed"
+}
+
+this AUTH-TOKEN should be set for the all /api/* method calls

@@ -1,0 +1,26 @@
+Entities:
+1-post:
+    caption
+    latitude
+    longitude
+    is_comment_enabled
+    event_date_time
+    expiration_date_time
+
+user:
+    username
+    is_valid
+    full_name
+
+user_profile_details:
+    id
+    avatar_url
+    bio
+
+
+
+relations:
+    1- each post has a user object attached to it
+    2- each user has a user_profile_details attached to it
+
+

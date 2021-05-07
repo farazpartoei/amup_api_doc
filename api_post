@@ -1,0 +1,330 @@
+note: AUTH-TOKEN header parameter needed for all /api/* endpoints
+Endpoint:
+    /api/create
+Method: POST
+
+Object Name
+    post
+
+create new post:
+fields(required)
+    latitude
+    longitude
+    caption
+    is_comment_enabled
+    event_date_time
+    expiration_date_time
+
+success return value:
+HTTP code:200
+
+{
+    "id": 40,
+    "latitude": "35.232",
+    "longitude": "51.2121",
+    "caption": "This is caption",
+    "event_date_time": "1620398719",
+    "is_comment_enabled": "1",
+    "expiration_date_time": "1632398719",
+    "user": {
+        "username": "faraz",
+        "profile_details": {
+            "id": 57,
+            "avatar_url": "http://someurl/avatar.jpg",
+            "bio": "Hello this is my bio",
+            "user": null
+        },
+        "full_name": "Faraz Partoei",
+        "is_valid": true
+    }
+}
+
+Error: malformed json
+HTTP code:400
+response:
+{
+    "message": "Bad JSON",
+    "error_code": 400
+}
+or internal server error:
+HTTP code: 500
+
+response:
+{
+    "message": "An exception occurred while executing 'INSERT INTO post (latitude, longitude, caption, event_date_time, is_comment_enabled, expiration_date_time, user_username) VALUES (?, ?, ?, ?, ?, ?, ?)' with params [null, \"123000\", \"Caption faraz from crud2\", \"123111111\", \"1\", \"124111111\", \"faraz\"]:\n\nSQLSTATE[23000]: Integrity constraint violation: 1048 Column 'latitude' cannot be null",
+    "error_code": 0
+}
+
+
+
+-----------------------------------------------------------------------------------------------------------------
+Endpoint:
+/api/read
+
+required:
+    type
+    filters
+
+Object name: post
+
+request:
+{
+    "type":"post",
+    "filters":{}
+}
+response:
+returns all post (pagination will be implemented)
+[
+    {
+        "id": 1,
+        "latitude": "35.222",
+        "longitude": "51.222",
+        "caption": "this is caption",
+        "event_date_time": "12343234",
+        "is_comment_enabled": true,
+        "expiration_date_time": "123123123",
+        "user": {
+            "username": "faraz",
+            "profile_details": {
+                "id": 57,
+                "avatar_url": "http://yahoo.com",
+                "bio": "Hello this is my bio",
+                "user": null
+            },
+            "full_name": "Faraz Partoei",
+            "is_valid": true
+        }
+    },
+    {
+        "id": 2,
+        "latitude": "35.222",
+        "longitude": "51.222",
+        "caption": "this is caption22",
+        "event_date_time": "12343234",
+        "is_comment_enabled": true,
+        "expiration_date_time": "123123123",
+        "user": {
+            "username": "faraz",
+            "profile_details": {
+                "id": 57,
+                "avatar_url": "http://yahoo.com",
+                "bio": "Hello this is my bio",
+                "user": null
+            },
+            "full_name": "Faraz Partoei",
+            "is_valid": true
+        }
+    },
+    {
+        "id": 3,
+        "latitude": "35.222",
+        "longitude": "51.222",
+        "caption": "this is caption22",
+        "event_date_time": "12343234",
+        "is_comment_enabled": true,
+        "expiration_date_time": "123123123",
+        "user": {
+            "username": "faraz",
+            "profile_details": {
+                "id": 57,
+                "avatar_url": "http://yahoo.com",
+                "bio": "Hello this is my bio",
+                "user": null
+            },
+            "full_name": "Faraz Partoei",
+            "is_valid": true
+        }
+    },
+    {
+        "id": 34,
+        "latitude": "212123123",
+        "longitude": "123123123",
+        "caption": "friday caption",
+        "event_date_time": "141111111",
+        "is_comment_enabled": true,
+        "expiration_date_time": "12313123",
+        "user": {
+            "username": "faraz",
+            "profile_details": {
+                "id": 57,
+                "avatar_url": "http://yahoo.com",
+                "bio": "Hello this is my bio",
+                "user": null
+            },
+            "full_name": "Faraz Partoei",
+            "is_valid": true
+        }
+    },
+    {
+        "id": 35,
+        "latitude": "212123123",
+        "longitude": "123123123",
+        "caption": "updated caption from crud",
+        "event_date_time": "141111111",
+        "is_comment_enabled": true,
+        "expiration_date_time": "12313123",
+        "user": {
+            "username": "faraz",
+            "profile_details": {
+                "id": 57,
+                "avatar_url": "http://yahoo.com",
+                "bio": "Hello this is my bio",
+                "user": null
+            },
+            "full_name": "Faraz Partoei",
+            "is_valid": true
+        }
+    },
+    {
+        "id": 37,
+        "latitude": "123000",
+        "longitude": "123000",
+        "caption": "updated caption from crud",
+        "event_date_time": "123111111",
+        "is_comment_enabled": true,
+        "expiration_date_time": "124111111",
+        "user": {
+            "username": "faraz",
+            "profile_details": {
+                "id": 57,
+                "avatar_url": "http://yahoo.com",
+                "bio": "Hello this is my bio",
+                "user": null
+            },
+            "full_name": "Faraz Partoei",
+            "is_valid": true
+        }
+    },
+    {
+        "id": 38,
+        "latitude": "123000",
+        "longitude": "123000",
+        "caption": "Caption faraz from crud2",
+        "event_date_time": "123111111",
+        "is_comment_enabled": true,
+        "expiration_date_time": "124111111",
+        "user": {
+            "username": "faraz",
+            "profile_details": {
+                "id": 57,
+                "avatar_url": "http://yahoo.com",
+                "bio": "Hello this is my bio",
+                "user": null
+            },
+            "full_name": "Faraz Partoei",
+            "is_valid": true
+        }
+    },
+    {
+        "id": 39,
+        "latitude": "123000",
+        "longitude": "123000",
+        "caption": "Caption faraz cccccc from crud2",
+        "event_date_time": "123111111",
+        "is_comment_enabled": true,
+        "expiration_date_time": "124111111",
+        "user": {
+            "username": "faraz",
+            "profile_details": {
+                "id": 57,
+                "avatar_url": "http://yahoo.com",
+                "bio": "Hello this is my bio",
+                "user": null
+            },
+            "full_name": "Faraz Partoei",
+            "is_valid": true
+        }
+    },
+    {
+        "id": 40,
+        "latitude": "123000",
+        "longitude": "123000",
+        "caption": "Caption faraz from crud2",
+        "event_date_time": "123111111",
+        "is_comment_enabled": true,
+        "expiration_date_time": "124111111",
+        "user": {
+            "username": "faraz",
+            "profile_details": {
+                "id": 57,
+                "avatar_url": "http://yahoo.com",
+                "bio": "Hello this is my bio",
+                "user": null
+            },
+            "full_name": "Faraz Partoei",
+            "is_valid": true
+        }
+    }
+]
+
+fetching post_id:35
+{
+    "type":"post",
+    "filters":{
+        "id":"35"
+    }
+}
+
+
+posts by username :faraz
+{
+  "type": "post",
+  "filters": {
+    "user": {
+      "username": "faraz"
+    }
+  }
+}
+
+same for update and delete
+any HTTP response code expect 200 is not accepted
+
+same structure for delete with filters
+
+-------------------------------------------------
+posts aren't to update, api works though
+
+request:
+{
+    "type":"post",
+    "filters":{
+        "id":1
+    },
+    "values":{
+        "caption":"updated caption"
+    }
+
+
+}
+
+response:
+{
+    "id": 1,
+    "latitude": "35.222",
+    "longitude": "51.222",
+    "caption": "updated caption",
+    "event_date_time": "12343234",
+    "is_comment_enabled": true,
+    "expiration_date_time": "123123123",
+    "user": {
+        "username": "faraz",
+        "profile_details": {
+            "id": 57,
+            "avatar_url": "http://yahoo.com",
+            "bio": "Hello this is my bio",
+            "user": null
+        },
+        "full_name": "Faraz Partoei",
+        "is_valid": true
+    }
+}
+
+
+
+
+
+
+
+
+
+
