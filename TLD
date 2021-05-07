@@ -17,10 +17,15 @@ user_profile_details:
     avatar_url
     bio
 
+user_photos:
+    id
+    url
+    created_at
 
 
 relations:
     1- each post has a user object attached to it
     2- each user has a user_profile_details attached to it
+    3-each user_photos has a user object attached to it
 
 

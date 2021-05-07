@@ -13,3 +13,6 @@ Endpoints:
 /api/update  
 /api/delete  
 ```
+
+
+read TLD document first!
