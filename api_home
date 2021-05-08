@@ -1,0 +1,97 @@
+Endpoint: /api/home
+Method: POST
+required parameters
+    latitude
+    longitude
+
+request body
+{
+    "latitude":"52.23232",
+    "longitude":"35.232"
+}
+
+response:
+[
+  {
+    "id": 1,
+    "latitude": "35.222",
+    "longitude": "51.222",
+    "caption": "updated caption",
+    "event_date_time": "12343234",
+    "is_comment_enabled": true,
+    "expiration_date_time": "123123123",
+    "user": {
+      "username": "faraz",
+      "profile_details": {
+        "id": 57,
+        "avatar_url": "http://yahoo.com",
+        "bio": "Hello this is my bio",
+        "user": null
+      },
+      "full_name": "Faraz Partoei",
+      "is_valid": true
+    }
+  },
+  {
+    "id": 2,
+    "latitude": "35.222",
+    "longitude": "51.222",
+    "caption": "this is caption22",
+    "event_date_time": "12343234",
+    "is_comment_enabled": true,
+    "expiration_date_time": "123123123",
+    "user": {
+      "username": "faraz",
+      "profile_details": {
+        "id": 57,
+        "avatar_url": "http://yahoo.com",
+        "bio": "Hello this is my bio",
+        "user": null
+      },
+      "full_name": "Faraz Partoei",
+      "is_valid": true
+    }
+  },
+  {
+    "id": 3,
+    "latitude": "35.222",
+    "longitude": "51.222",
+    "caption": "this is caption22",
+    "event_date_time": "12343234",
+    "is_comment_enabled": true,
+    "expiration_date_time": "123123123",
+    "user": {
+      "username": "faraz",
+      "profile_details": {
+        "id": 57,
+        "avatar_url": "http://yahoo.com",
+        "bio": "Hello this is my bio",
+        "user": null
+      },
+      "full_name": "Faraz Partoei",
+      "is_valid": true
+    }
+  },
+  {
+    "id": 34,
+    "latitude": "212123123",
+    "longitude": "123123123",
+    "caption": "friday caption",
+    "event_date_time": "141111111",
+    "is_comment_enabled": true,
+    "expiration_date_time": "12313123",
+    "user": {
+      "username": "faraz",
+      "profile_details": {
+        "id": 57,
+        "avatar_url": "http://yahoo.com",
+        "bio": "Hello this is my bio",
+        "user": null
+      },
+      "full_name": "Faraz Partoei",
+      "is_valid": true
+    }
+  }
+]
+
+
