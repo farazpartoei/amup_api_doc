@@ -3,7 +3,7 @@ Endpoint
 /api/search
 
 required:
-    type
+    type  (all,post,user)
     query
     filters
 optional
