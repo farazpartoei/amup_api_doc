@@ -1,0 +1,72 @@
+note: AUTH-TOKEN header parameter needed for all /api/* endpoints
+Endpoint:
+    /api/create
+Method: POST
+
+Object Name
+    comment
+
+create new post:
+fields(required)
+    filters
+    post id
+    text
+
+success return value:
+HTTP code:200
+
+sample request:
+
+{
+    "type":"comment",
+    "filters":{
+        "post":{
+            "id":37
+        },
+        "text":"This is a comment for post 37"
+
+    }
+}
+
+sample response:
+{
+    "id": 9,
+    "text": "This is a comment for post 37",
+    "date_time": 1621158378,
+    "post": {
+        "id": 37,
+        "latitude": "123000",
+        "longitude": "123000",
+        "caption": "updated caption from crud",
+        "event_date_time": "123111111",
+        "is_comment_enabled": true,
+        "expiration_date_time": "124111111",
+        "user": {
+            "username": "faraz",
+            "profile_details": {
+                "id": 57,
+                "avatar_url": "http://yahoo.com",
+                "bio": "Hello this is my bio",
+                "user": null
+            },
+            "full_name": "Faraz Partoei",
+            "is_valid": true
+        }
+    },
+    "user": {
+        "username": "faraz",
+        "profile_details": {
+            "id": 57,
+            "avatar_url": "http://yahoo.com",
+            "bio": "Hello this is my bio",
+            "user": null
+        },
+        "full_name": "Faraz Partoei",
+        "is_valid": true
+    }
+}
+
+
+
+
+
