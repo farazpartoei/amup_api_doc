@@ -1,0 +1,10 @@
+this API uses multipart for data
+ENDPOINT:
+/api/upload_image
+variable name: image
+
+response:
+
+{
+    "image_url": "http://94.130.88.31:8380/images/37fb30c8f5b67226c3dd673ac607e7d7.jpg"
+}
