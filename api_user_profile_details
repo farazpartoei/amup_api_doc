@@ -1,0 +1,26 @@
+Endpoint: /api/home
+Method: POST
+required parameters
+    bio
+    avatar_url
+
+{
+    "type":"user_profile_details",
+    "filters":{
+        "bio":"this is bio",
+        "avatar_url":"http://url.com/image.jpg"
+    }
+}
+
+response:
+{
+    "id": 6,
+    "avatar_url": "http://94.130.88.31:8380/images/21ffc204d0222ec9f84e400278031b22.jpg",
+    "bio": "I am Sara",
+    "user": {
+        "username": "sara",
+        "profile_details": null,
+        "full_name": "Sara Hekmat",
+        "is_valid": true
+    }
+}
