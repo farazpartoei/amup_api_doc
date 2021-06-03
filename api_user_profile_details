@@ -1,4 +1,4 @@
-Endpoint: /api/home
+Endpoint: /api/create
 Method: POST
 required parameters
     bio
@@ -21,6 +21,45 @@ response:
         "username": "sara",
         "profile_details": null,
         "full_name": "Sara Hekmat",
+        "is_valid": true
+    }
+}
+
+or to update user profile details
+
+Endpoint: /api/update
+
+required:
+    type
+    filters
+    values
+
+
+sample request:
+
+{
+    "type":"user_profile_details",
+    "filters":{
+        "user":{
+            "username":"faraz"
+        }
+    },
+    "values":{
+        "avatar_url":"http://127.0.0.1:8000/images/4fc7308942dbb417f1f8e0863cd68f76.jpg",
+        "bio":"new bio"
+
+    }
+}
+
+--------------RESPONSE-----------------
+{
+    "id": 1,
+    "avatar_url": "http://127.0.0.1:8000/images/4fc7308942dbb417f1f8e0863cd68f76.jpg",
+    "bio": "new bio",
+    "user": {
+        "username": "faraz",
+        "profile_details": null,
+        "full_name": "Faraz Partoei",
         "is_valid": true
     }
 }
