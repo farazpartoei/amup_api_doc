@@ -1,3 +1,25 @@
+checking username before registration
+
+Endpoint: /check_username
+Method: GET
+request:
+/check_username/<username>
+response:
+{
+    "ok": true,
+    "message": "username exist"
+}
+response:
+{
+    "ok": false,
+    "message": "username does not exist"
+}
+
+
+
+
+
+
 Endpoint: /api/register
 Method: POST
 request body
