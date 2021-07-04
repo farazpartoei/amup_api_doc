@@ -1,0 +1,104 @@
+Endpoints:
+    /api/create
+    /api/read
+    /api/update
+    /api/delete
+
+required
+    type
+    filters
+
+sample create query:
+
+{
+    "type":"user_photos",
+    "filters":{
+        "url":"http://kahoo.com"
+    }
+}
+
+response
+
+{
+    "id": 3,
+    "url": "http://kahoo.com",
+    "created_at": 1625386271,
+    "user": {
+        "username": "faraz",
+        "profile_details": {
+            "id": 57,
+            "avatar_url": "http://yahoo.com",
+            "bio": "Hello this is my bio",
+            "user": null
+        },
+        "full_name": "Faraz Partoei",
+        "is_valid": true
+    }
+}
+
+
+
+sample read query:
+
+{
+    "type":"user_photos",
+    "filters":{
+        "user":{
+            "username":"faraz"
+        }
+    }
+}
+
+
+sample read response:
+
+[
+    {
+        "id": 1,
+        "url": "lol.jpg",
+        "created_at": "1620160878",
+        "user": {
+            "username": "faraz",
+            "profile_details": {
+                "id": 57,
+                "avatar_url": "http://yahoo.com",
+                "bio": "Hello this is my bio",
+                "user": null
+            },
+            "full_name": "Faraz Partoei",
+            "is_valid": true
+        }
+    },
+    {
+        "id": 2,
+        "url": "123",
+        "created_at": "1620402731",
+        "user": {
+            "username": "faraz",
+            "profile_details": {
+                "id": 57,
+                "avatar_url": "http://yahoo.com",
+                "bio": "Hello this is my bio",
+                "user": null
+            },
+            "full_name": "Faraz Partoei",
+            "is_valid": true
+        }
+    },
+    {
+        "id": 3,
+        "url": "http://kahoo.com",
+        "created_at": "1625386271",
+        "user": {
+            "username": "faraz",
+            "profile_details": {
+                "id": 57,
+                "avatar_url": "http://yahoo.com",
+                "bio": "Hello this is my bio",
+                "user": null
+            },
+            "full_name": "Faraz Partoei",
+            "is_valid": true
+        }
+    }
+]
