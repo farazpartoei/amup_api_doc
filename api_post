@@ -15,6 +15,27 @@ fields(required)
     event_date_time
     expiration_date_time
 
+
+
+
+sample query:
+
+
+{
+    "type":"post",
+    "filters":{
+        "latitude":"35.714813",
+        "longitude":"51.438993",
+        "caption":"lets walk",
+        "is_comment_enabled":1,
+        "event_date_time":"1621611000",
+        "expiration_date_time":"1621621800"
+    }
+}
+
+
+
+
 success return value:
 HTTP code:200
 
@@ -65,12 +86,18 @@ required:
     type
     filters
 
+optional:
+    limit
+    offset
+
 Object name: post
 
 request:
 {
     "type":"post",
     "filters":{}
+    "limit":20,
+    "offset":3
 }
 response:
 returns all post (pagination will be implemented)
